@@ -38,5 +38,6 @@ jobs:
           POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
 
         run:
-          docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge_2025_03_mw up --build -d
+          docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge_2025_03_mw-${{ github.ref_name }} up --build -d
+          #TODO do sprawdzenia jak to się robiło żeby tutaj była dynamicznie robiona nazwa
 
