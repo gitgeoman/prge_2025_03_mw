@@ -1,0 +1,23 @@
+x-environment:
+  - &env-postgres-db POSTGRES_DB=${POSTGRES_DB}
+  - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
+  - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+services:
+  postgis:
+    build:
+      context: ..
+      dockerfile: docker/postgis/Dockerfile
+    image: 'prge_2025_03_mw_postgis'
+    container_name: 'prge_2025_03_mw_postgis'
+    environment:
+      - *env-postgres-db
+      - *env-postgres-user
+      - *env-postgres-password
+    ports:
+      - 5443:5432
+    volumes:
+      - postgis-prge-local:/var/lib/postgresql/data
+
+volumes:
+  postgis-prge-local:
