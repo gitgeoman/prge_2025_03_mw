@@ -30,6 +30,8 @@ services:
       SKIP_DEMO_DATA: "true"
     ports:
       - 9000:8080
+    volumes:
+      - ../config/geoserver_data:/opt/geoserver_data
 
 
 volumes:
