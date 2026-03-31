@@ -24,7 +24,7 @@ services:
       context: ..
       dockerfile: docker/geoserver/Dockerfile
     image: 'prge_2025_03_mw_geoserver'
-    container_name: 'prge_2025_03_mw_geoserver'
+    container_name: prge-2025-03-mw-geoserver-${ENV_NAME}
     environment:
       GEOSERVER_DATA_DIR: /opt/geoserver_data
       SKIP_DEMO_DATA: "true"
