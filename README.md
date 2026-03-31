@@ -10,6 +10,3 @@
 docker-compose -f ./docker-compose/docker-compose-prge-local.yml --env-file .env -p local-prge_2025_03_mw  up --build -d
 
 ```
-
-a
-sdf
