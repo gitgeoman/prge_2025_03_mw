@@ -19,5 +19,21 @@ services:
     volumes:
       - postgis-prge-data:/var/lib/postgresql/data
 
+  geoserver:
+    build:
+      context: ..
+      dockerfile: docker/geoserver/Dockerfile
+    image: 'prge_2025_03_mw_geoserver'
+    container_name: 'prge_2025_03_mw_geoserver'
+    environment:
+      GEOSERVER_DATA_DIR: /opt/geoserver_data
+      SKIP_DEMO_DATA: "true"
+    ports:
+      - ${GEOSERVER_PORT}:8080
+    volumes:
+      - geoserver-data:/opt/geoserver_data
+
+
 volumes:
   postgis-prge-data:
+  geoserver-data:
