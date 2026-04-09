@@ -16,7 +16,7 @@ async def get_user():
 
         with engine.connect() as connection:
             result = connection.execute(sql_query)
-            # users = result.fetchall()
+
             users = [dict(row._mapping) for row in result]
 
         return {"status": "success", "data": users}
