@@ -1,8 +1,13 @@
 import React from 'react';
+import MapComponent from "../components/MapComponent";
 
-function Map(props) {
+function Map() {
     return (
-        <div>MAP</div>
+        <div>
+
+            <MapComponent/>
+
+        </div>
     );
 }
 
